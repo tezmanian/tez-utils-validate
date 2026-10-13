@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Tests\Validate;
+namespace Tezmanian\Utils\Tests\Validate;
 
 use PHPUnit\Framework\TestCase;
-use Tez\Utils\Validate\TypeCast;
+use Tezmanian\Utils\Validate\TypeCast;
 
 final class TypeCastTest extends TestCase
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Tests\Validate;
+namespace Tezmanian\Utils\Tests\Validate;
 
 use PHPUnit\Framework\TestCase;
-use Tez\Utils\Validate\Guard;
-use Tez\Utils\Validate\Schema;
+use Tezmanian\Utils\Validate\Guard;
+use Tezmanian\Utils\Validate\Schema;
 
 final class SchemaTest extends TestCase
 {

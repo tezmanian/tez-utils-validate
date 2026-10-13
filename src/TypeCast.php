@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Validate;
+namespace Tezmanian\Utils\Validate;
 
 /**
  * Strict type coercion — throws UnexpectedValueException when a value

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Validate;
+namespace Tezmanian\Utils\Validate;
 
 /**
  * Combines boolean predicates with AND / OR / NONE logic.

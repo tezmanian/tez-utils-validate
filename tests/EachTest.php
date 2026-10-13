@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Tests\Validate;
+namespace Tezmanian\Utils\Tests\Validate;
 
 use PHPUnit\Framework\TestCase;
-use Tez\Utils\Validate\Each;
-use Tez\Utils\Validate\Guard;
+use Tezmanian\Utils\Validate\Each;
+use Tezmanian\Utils\Validate\Guard;
 
 final class EachTest extends TestCase
 {

@@ -1,12 +1,19 @@
 # tez-utils-validate
 
+[![CI](https://github.com/tezmanian/tez-utils-validate/actions/workflows/php.yml/badge.svg)](https://github.com/tezmanian/tez-utils-validate/actions/workflows/php.yml)
+[![Packagist Version](https://img.shields.io/packagist/v/tezmanian/utils-validate)](https://packagist.org/packages/tezmanian/utils-validate)
+[![PHP](https://img.shields.io/packagist/php-v/tezmanian/utils-validate)](https://packagist.org/packages/tezmanian/utils-validate)
+[![License: MIT](https://img.shields.io/packagist/l/tezmanian/utils-validate)](LICENSE)
+
 PHP validation toolkit with guard assertions, composable rules, schema validation, strict type casting, and array-item validation. PHP 8.3+, no framework dependencies.
 
 ## Installation
 
 ```bash
-composer require tez/utils-validate
+composer require tezmanian/utils-validate
 ```
+
+Package: [`tezmanian/utils-validate`](https://packagist.org/packages/tezmanian/utils-validate) · Namespace: `Tezmanian\Utils\Validate`
 
 ## Components
 
@@ -26,7 +33,7 @@ composer require tez/utils-validate
 Assertions that return the value on success, making them suitable for inline use. Throws `RuntimeException` by default; the exception can be overridden with a class name, an instance, or a closure.
 
 ```php
-use Tez\Utils\Validate\Guard;
+use Tezmanian\Utils\Validate\Guard;
 
 // Basic assertions
 $name  = Guard::notNull($request->get('name'));
@@ -60,7 +67,7 @@ Guard::notNull($value, fn() => new \DomainException('Value is required'));
 Stateless boolean predicates. Return `true`/`false` — never throw.
 
 ```php
-use Tez\Utils\Validate\Rules;
+use Tezmanian\Utils\Validate\Rules;
 
 Rules::isEmail('user@example.com');          // true
 Rules::isUrl('https://example.com');         // true
@@ -90,8 +97,8 @@ Rules::isDate('23.04.2026', 'd.m.Y');       // true
 Combines multiple predicates into one using AND, OR, or NONE logic. Each method returns a `Closure` that can be passed directly to `Guard::that()`.
 
 ```php
-use Tez\Utils\Validate\Composite;
-use Tez\Utils\Validate\Rules;
+use Tezmanian\Utils\Validate\Composite;
+use Tezmanian\Utils\Validate\Rules;
 
 $isStrongPassword = Composite::all(
     fn($v) => Rules::minLength($v, 8),
@@ -125,8 +132,8 @@ Validates an array against a shape definition. Fails fast on the first violation
 Prefix with `?` to mark a field as optional (absent or `null` is accepted).
 
 ```php
-use Tez\Utils\Validate\Schema;
-use Tez\Utils\Validate\Guard;
+use Tezmanian\Utils\Validate\Schema;
+use Tezmanian\Utils\Validate\Guard;
 
 Schema::validate($data, [
     'name'    => 'string',
@@ -155,7 +162,7 @@ user.profile.displayName: required field missing
 Strict type coercion — throws `UnexpectedValueException` when a value cannot be unambiguously converted, unlike PHP built-ins that silently truncate or guess.
 
 ```php
-use Tez\Utils\Validate\TypeCast;
+use Tezmanian\Utils\Validate\TypeCast;
 
 TypeCast::toInt('42');      // 42
 TypeCast::toInt(3.0);       // 3
@@ -184,8 +191,8 @@ TypeCast::toNullableBool(null);   // null
 Applies a validation rule to every item in an array. Fails fast on the first violation and prepends the index path to the exception message.
 
 ```php
-use Tez\Utils\Validate\Each;
-use Tez\Utils\Validate\Guard;
+use Tezmanian\Utils\Validate\Each;
+use Tezmanian\Utils\Validate\Guard;
 
 $orders = [
     ['amount' => 50],
@@ -213,6 +220,15 @@ The original exception type is preserved, and the original exception is availabl
 - PHP 8.3+
 - No runtime dependencies
 
+## Development
+
+```bash
+make build && make install
+make ci   # audit, PHPStan, code style, tests
+```
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
+
+Author: René Halberstadt

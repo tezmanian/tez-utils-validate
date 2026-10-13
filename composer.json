@@ -1,16 +1,33 @@
 {
-    "name": "tez/utils-validate",
+    "name": "tezmanian/utils-validate",
     "type": "library",
     "description": "Lightweight PHP validation toolkit: guard assertions, boolean rules, schema validation, strict type casting, composite predicates, and array-item validation — PHP 8.3+, no dependencies.",
+    "keywords": [
+        "validation",
+        "guard",
+        "schema",
+        "php"
+    ],
+    "homepage": "https://github.com/tezmanian/tez-utils-validate",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "René Halberstadt",
+            "email": "tezmanian@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tezmanian/tez-utils-validate/issues",
+        "source": "https://github.com/tezmanian/tez-utils-validate"
+    },
     "autoload": {
         "psr-4": {
-            "Tez\\Utils\\Validate\\": "src/"
+            "Tezmanian\\Utils\\Validate\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tez\\Utils\\Tests\\Validate\\": "tests/"
+            "Tezmanian\\Utils\\Tests\\Validate\\": "tests/"
         }
     },
     "require": {

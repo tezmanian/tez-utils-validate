@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tez\Utils\Tests\Validate;
+namespace Tezmanian\Utils\Tests\Validate;
 
 use PHPUnit\Framework\TestCase;
-use Tez\Utils\Validate\Composite;
-use Tez\Utils\Validate\Rules;
+use Tezmanian\Utils\Validate\Composite;
+use Tezmanian\Utils\Validate\Rules;
 
 final class CompositeTest extends TestCase
 {
